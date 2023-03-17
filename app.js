@@ -90,6 +90,38 @@ var printProduct = product => {
 
 showProducts(products);
 
+var subtotalBill = (productList) => {
+    var subtotal = 0;
+    for (var product of productList) {
+        subtotal += product.price * product.units;
+    }
+    return subtotal;
+}
+
+subtotalBill(products);
+
+var taxTotal = (productList) => {
+    var taxTotal = 0;
+    for (var product of productList) {
+        taxTotal += product.price * product.tax * product.units;
+    }
+    return taxTotal;
+}
+var button = document.getElementById("button");
+button.addEventListener("click", printBill)
+var bill = () => {return subtotalBill() + taxTotal()};
+
+var printBill = bill => {
+    var billContainer = document.createElement("p");
+    billContainer.innerText = subtotalBill(products) + taxTotal(products) + bill(products);
+    p.setAttribute("class", "bill");
+    billContainer.appendChild(p);
+   
+}
+
+
+
+
 
 
 
