@@ -1,6 +1,6 @@
 // Constantes.
-const REGULAR_TYPE = 21;
-const LOWER_TYPE = 4;
+const REGULAR_TYPE = 0.21;
+const LOWER_TYPE = 0.04;
 const EXEMPT_TYPE = 0;
 
 // Entrada.
@@ -98,8 +98,6 @@ var subtotalBill = (productList) => {
     return subtotal;
 }
 
-subtotalBill(products);
-
 var taxTotal = (productList) => {
     var taxTotal = 0;
     for (var product of productList) {
@@ -107,21 +105,16 @@ var taxTotal = (productList) => {
     }
     return taxTotal;
 }
-var button = document.getElementById("button");
-button.addEventListener("click", printBill)
-var bill = () => {return subtotalBill() + taxTotal()};
 
-var printBill = bill => {
-    var billContainer = document.createElement("p");
-    billContainer.innerText = subtotalBill(products) + taxTotal(products) + bill(products);
-    p.setAttribute("class", "bill");
-    billContainer.appendChild(p);
-   
+var bill = (products) => {
+  return subtotalBill(products) + taxTotal(products)};
+
+var printBill = () => {
+  document.getElementById("subtotal").innerText = "Subtotal  " + subtotalBill(products).toFixed(2) + " €";
+  document.getElementById("taxTotal").innerText = "Total IVA " + taxTotal(products).toFixed(2) + " €";
+  document.getElementById("bill").innerText = "Total " + bill(products).toFixed(2) + " €";
 }
-
-
-
-
-
+var button = document.getElementById("button");
+button.addEventListener("click", printBill);
 
 
