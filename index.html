@@ -5,19 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algoritmos I</title>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
     <header>
         <h1>Carrito de la compra</h1>
     </header>
     <main>
-        <ol id="product-list-container">
-            <!-- product list from js -->
-        </ol>
-        <button id="button">Calcular</button>
-        <p id="subtotal" class="subtotal"></p>
-        <p id="taxTotal" class="taxTotal"></p>
-        <p id="bill" class="bill"></p>
+        <div class="principal-container">
+            <ol id="product-list-container" class="product-list-container">
+                <!-- product list from js -->
+            </ol>
+        </div>
+        <div class="button-container">
+            <button id="button">Calcular</button>
+            <p id="subtotal" class="subtotal"></p>
+            <p id="taxTotal" class="taxTotal"></p>
+            <p id="bill" class="bill"></p>
+        </div>
     </main>
     <script src="app.js"></script>
 </body>

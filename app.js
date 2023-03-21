@@ -73,6 +73,7 @@ var showProducts = productList => {
 
 var printProduct = product => {
     var description = document.createElement("li");
+    description.setAttribute("class", "li");
     description.innerText = 
     product.description + " - " + product.price + " €/ud";
     var input = document.createElement("input");
